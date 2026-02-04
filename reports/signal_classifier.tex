@@ -177,11 +177,35 @@ def growing_exp(n):
     except:
         return float('inf')
 
+#Decaying Exponential (Energy Signal)
+# As n increases, value decreases; energy sum converges.
+def decaying_exp(n):
+    return np.where(n >= 0, (0.5)**n, 0)
+
+#Discrete Impulse / Kronecker Delta (Energy Signal)
+# Only has a value at n=0.
+def impulse(n):
+    return np.where(n == 0, 1, 0)
+
+#Unit Ramp (Neither Energy nor Power)
+# Grows linearly; both E and P will diverge to infinity.
+def unit_ramp(n):
+    return np.where(n >= 0, n, 0)
+
+# Signum Function (Power Signal)
+# Similar to a DC signal but changes polarity at n=0.
+def signum_sig(n):
+    return np.sign(n)
+
 print(f"Rect Pulse: {classify_dt_signal(rect)}")
 print(f"Unit Step: {classify_dt_signal(unit_step)}")
 print(f"sine wave: {classify_dt_signal(np.sin)}")
 print(f"dc/constant signal: {classify_dt_signal(dc_signal)}")
 print(f"growing exponential signal: {classify_dt_signal(growing_exp)}")
+print(f"Decaying Exp: {classify_dt_signal(decaying_exp)}")
+print(f"Impulse: {classify_dt_signal(impulse)}")
+print(f"Unit Ramp: {classify_dt_signal(unit_ramp)}")
+print(f"Signum: {classify_dt_signal(signum_sig)}")
 \end{minted}
 
 \section*{Output}
