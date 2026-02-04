@@ -20,7 +20,7 @@
     
     {\Large \textbf{Python Project 1:}} \\
     \vspace{0.4in}
-    {\huge \textbf{Descrete time Signal Classifier:}} \\
+    {\huge \textbf{Discrete time Signal Classifier:}} \\
     \vspace{0.1in}
     {\huge \textbf{Energy Vs. Power}} \\
     
@@ -68,7 +68,7 @@ The aim is to classify a given real-valued signal into energy signal or power si
 
 \section*{Method of Classification (Convergence)}
 
-The given descrete time signal’s energy (E) and power (P) are computed using the summation of squares of samples as:
+The given discrete time signal’s energy (E) and power (P) are computed using the summation of squares of samples as:
 
 \begin{equation*}
     E = \sum_{n=-\infty}^{\infty} |x[n]|^2
@@ -88,7 +88,7 @@ to a non-zero value. The signal is energy signal if $0 < E < \infty$ and it is p
 \section*{Source Code}
 
 \begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos]{python}
-#jupyter python program to classify descrete time signals as energy or power usinfg convergence
+#jupyter python program to classify discrete time signals as energy or power usinfg convergence
 
 import numpy as np
 from math import inf
@@ -150,7 +150,7 @@ def classify_dt_signal(signal_func):
 
 \section*{Validation against test signals}
 \begin{minted}[frame=lines, framesep=2mm, baselinestretch=1.2, fontsize=\footnotesize, linenos]{python}
-''' 1. Representation of descrete time signals as fns'''
+''' 1. Representation of discrete time signals as fns'''
 
 # Rectangular Pulse (Energy Signal)
 def rect(n): return np.where((n >= 0) & (n <= 10), 1, 0)
