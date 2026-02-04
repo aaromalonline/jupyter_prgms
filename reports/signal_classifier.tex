@@ -78,7 +78,7 @@ The given discrete time signal’s energy (E) and power (P) are computed using t
 \end{equation*}
 
 To classify the signal into either category, the summation has to be evaluated and checked if it converges
-to a non-zero value. The signal is energy signal if $0 < E < \infty$ and it is power signal $0 < P < \infty$. To test for the convergence of the signal, the energy and power are computed with various increasing upper limits $L$ ($L = 10^2, 10^3, \dots, 10^6$), ie. in  $(-10^2,10^2), \dots, (-10^6,10^6)$. From this, a sequence containing differences between each successive limit (energy or power) is obtained and checked if it tends to decrease. Additionally, to account for any rounding error which may result in an oscillatory pattern in the sequence of differences, it is also checked whether each difference is within the average of the whole difference sequence, ie. thus converges to a finite value.
+to a non-zero value. The signal is energy signal if $0 < E < \infty$ and it is power signal $0 < P < \infty$. To test for the convergence of the signal, the energy and power are computed within various increasing upper limits $L$ ($L = 10^2, 10^3, \dots, 10^6$), ie. in  $(-10^2,10^2), \dots, (-10^6,10^6)$. From this, a sequence containing differences between each successive limit (energy or power) is obtained and checked if it tends to decrease. Additionally, to account for any rounding error which may result in an oscillatory pattern in the sequence of differences, it is also checked whether each difference is within the average of the whole difference sequence, ie. thus converges to a finite value.
 
 \begin{itemize}
     \item \textbf{Energy Signal:} If the energy converges to a finite value ($0 < E < \infty$) and the average power $P = 0$.
