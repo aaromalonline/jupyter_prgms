@@ -56,7 +56,7 @@
 
 \section*{Aim}
 
-The aim is to classify a given real-valued signal into energy signal or power signal, or neither of them, using numeric integration, and also to find their energy and power. The signal may be given as a Python function, and the test is done by calling the classifier function.. 
+The aim is to classify a given discrete-time signal into energy signal or power signal, or neither of them, and also to find their energy and power. The signal may be represented as a python fn (generating numpy array in varying upper intervals), and the test is done by calling the classifier function.
 
 \section*{Tools used}
 \begin{itemize}
@@ -93,12 +93,15 @@ to a non-zero value. The signal is energy signal if $0 < E < \infty$ and it is p
 import numpy as np
 from math import inf
 
-'''3. It utilises convergence, by iterating over the list of all energies/powers (read as sequence) where the seq is unstable if
-   - the differences of consecutive elements (form a list of that) is inc and any diff in the list is 
-     greater than avg diff of elements (ie energies are finite ie not tends to inf/0 on inc interval windows) or 
+'''3. It check the stability ie convergence of received energy/power sequence by computing the differences
+btw consective elements (energy or power) of the seq, hence analysing it. The sequence is unstable if:
+   - the differences of consecutive elements (formed diff list) is inc and any diff in the list is 
+     greater than avg diff of elements (ie not a finite sequence or have oscialltaionss) or 
    - the list of energies contain 0 or infinity or 
    - the length of energy/power list is <2. 
-    Thus returning the respective boolean.'''
+    Thus returning the respective boolean corresponding to stability of the recievd sequence.
+ie the sequence is stable if the difference btw the consecutive elements of the sequence (energy/power) is 
+decreasing and is less than the average difference ie finite.'''
 
 def is_stable(sequence):
     #Checks if a sequence approaches a non-zero, non-infinite limit.
@@ -115,26 +118,22 @@ def is_stable(sequence):
             return False
     return True
 
-'''2. Generate energies and powers of intervals from -10^2 to 10^2, -10^3 to 10^3, ....... -10^7 to 10^7 for the signal_fn
-and pass the lists to is_stable() to check stability of energies/powers hence return the classified o/p accordingly. 
-(stable energies = energy signal and viceversa)'''
+'''2. Generate sample signal within upper limits -10^2 to 10^2, -10^3 to 10^3, ....... -10^7 to 10^7 for the 
+signal_fn, compute energies and powers of each interval and pass to is_stable() to check the stability ie 
+convergence of enegy/power seq, thereby return the classification (stable energies = energy signal and viceversa)'''
 
 def classify_dt_signal(signal_func):
     energies = []
     powers = []
     
-    # Test for increasing 'N' (Number of samples)
-    # We check the signal from N=100 to N=1,000,000
+    # Test for increasing 'N' (Number of samples), We check the signal from N=100 to N=1,000,000
     for i in range(2, 7):
         N = 10**i
         n = np.arange(-N, N)
         x_n = signal_func(n)
         
-        # 1. Compute Signal Energy: Sum of squares
-        E = np.sum(np.abs(x_n)**2)
-        
-        # 2. Compute Average Power: Energy / Total Duration 
-        P = E / len(n)
+        E = np.sum(np.abs(x_n)**2) # 1. Compute Signal Energy: Sum of squares
+        P = E / len(n) # 2. Compute Average Power: Energy / Total Duration 
         
         energies.append(E)
         powers.append(P)
