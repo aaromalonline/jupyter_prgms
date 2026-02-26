@@ -4,8 +4,8 @@ Python for machine learning
 - Why python for AI - simple, standard library, portability, extendible, scalable
 - components - character set, tokens (identifiers, keybwords, literals, punctuators, operators), variables, statement & expression (control flow, conditional statements), Functions, Classes
 
-- built-in data types (lists, tuples, sets, dict) (mutubility, order, iteration) & functions (indexing or acess, length, couting, sorting, insert, remove, revserse)
-- numpy - array & matrix (index, shape, transpose, matrix op), (pi, cos. sin), linspace & arrange, mean & std, np.random.uniform(), log1p, abs
+- built-in data types (lists, tuples, sets, dict) (mutability, order, iteration) & functions (indexing or acess, length, couting, sorting, insert, remove, revserse)
+- numpy - array & matrix (index, shape, transpose, matrix op), (pi, cos. sin), linspace & arange, mean & std, np.random.uniform(), log1p, abs
 - math & cmath (cmath.sqrt)
 - scipy - root, constants, fft, signal, stats
 
