@@ -1,0 +1,27 @@
+Python for machine learning
+------------------------------------------
+
+- Why python for AI - simple, standard library, portability, extendible, scalable
+- components - character set, tokens (identifiers, keybwords, literals, punctuators, operators), variables, statement & expression (control flow, conditional statements), Functions, Classes
+
+- built-in data types (lists, tuples, sets, dict) (mutubility, order, iteration) & functions (indexing or acess, length, couting, sorting, insert, remove, revserse)
+- numpy - array & matrix (index, shape, transpose, matrix op), (pi, cos. sin), linspace & arrange, mean & std, np.random.uniform(), log1p, abs
+- math & cmath (cmath.sqrt)
+- scipy - root, constants, fft, signal, stats
+
+*set, matrix operations, perfect no, armstrong no, factorial, prime (factors), rev, sum of digits, palindrome. soln of quadratic
+
+- matplotlib.pyplot - figure, subplots & axes (state vs class based), pie chart (percentages), line (plot), histogram (distribution of data set as bins ie ranges, range & classwidth, no of bins), scatter/line/bar, box plot (whiskers, IQR with Quartiles, outliers)
+
+(pie, histogram, box - series data)
+
+- seaborn - statistical data visualisation with pandas dataframe (dataset), builtin themes, plots (relational, matrix, categorical, distribution, regression, multiplot), heatmap of correlation matrix of a dataframe from loaded iris dataset (cmap, cbar, annot)(strong pos, strong neg, weak correlation), other plots (histplot, scatter, heatmap)
+
+- pandas - dataframe (readcsv, table as dict of cols) & series objects (cols), grouping by vals of a col, stats of col, plotting a dataframe ie df/series object (mean, std, quantile, describe, plot, map, replace, corr member fns)
+
+Data handling :
+1. handling missing values - types (MCAR, MAR, MNAR), techniques (row/col del, replace with mean, frwd/backwd fill, predict by ml/regression), detecting/droping/filling missing data in df (isna, dropna with axis & how & thresh, fillna with value and method), interpolating df
+
+2. duplicate data - check duplicate row, drop_duplicates with keep
+3. outliers - (uni/multivariate, global/contextual), detect & handle stat approach (IQR, Zscore)
+4. inconsistent data - standardization, normalisation, catagorical mapping, predefined dictionary (map and replace df with dict)
