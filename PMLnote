@@ -29,3 +29,4 @@ Data handling :
 4. inconsistent data - standardization, normalisation, catagorical mapping, predefined dictionary (map and replace df with dict)
 
 - sklearn - sklearn.datasets, sklearn.preprocesing (minmaxscaler for normalisation of pandas sub dataframes)
+- opencv (cv, MLL, GUI) (BGR format in opencv, matplotlib uses RGB) - read/write images
